@@ -981,7 +981,6 @@ class NestTest(parameterized.TestCase):
            error_type=ValueError),
       dict(testcase_name="Dicts", s1={"a": 1}, s2={"b": 2},
            error_type=ValueError),
-      dict(testcase_name="Mixed", s1=(1, 2), s2=[3, 4], error_type=TypeError),
       dict(testcase_name="Nested",
            s1={"a": [2, 3, 4], "b": [1, 3]},
            s2={"b": [5, 6], "a": [8, 9]},
