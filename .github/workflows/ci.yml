@@ -92,7 +92,11 @@ jobs:
             python -m pip install -r requirements-test.txt && \
             python setup.py sdist && \
             python -m pip wheel --verbose --no-deps --no-clean dist/dm-tree*.tar.gz && \
-            python -m pip install dm_tree*.whl
+            python -m pip install dm_tree*.whl && \
+            pip install pytest && \
+            mkdir tests && pushd tests && \
+            python -m pytest -vv --pyargs tree && \
+            popd && \
             deactivate'
     - name: Test
       run: |
@@ -103,7 +107,7 @@ jobs:
             pip install pytest && \
             mkdir tests && pushd tests && \
             python -m pytest -vv --pyargs tree && \
-            popd && \
+            popd
             deactivate'
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
