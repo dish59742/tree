@@ -94,9 +94,7 @@ jobs:
             python -m pip wheel --verbose --no-deps --no-clean dist/dm-tree*.tar.gz && \
             python -m pip install dm_tree*.whl && \
             pip install pytest && \
-            mkdir tests && pushd tests && \
-            python -m pytest -vv --pyargs tree && \
-            popd && \
+            python -m pytest  && \
             deactivate'
     - name: Test
       run: |
